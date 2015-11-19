@@ -12,8 +12,8 @@ float [] ewave3x = new float[8];
 float [] ewave3y = {a,a-61,a+61,a-122,a+122,a-61,a+61,a};
 float enemyx = 0;
 float enemyy = 0;
-float k = random(0,599);
-float s = random(0,439);
+float treasurex = random(0,599);
+float treasurey = random(0,439);
 float l = 38;
 float fighterx = 589;
 float fightery = 240;
@@ -45,6 +45,7 @@ PImage end2;
 PImage [] flame;
 void setup () {
    size(640, 480) ;
+   frameRate(100);
    bg2 = loadImage("img/bg2.png");
    bg1 = loadImage("img/bg1.png");
    enemy = loadImage("img/enemy.png");
@@ -75,7 +76,7 @@ void draw() {
   fill(225,0,0);
   rect(13,5,l,15);
   image(hp,0,0);
-  image(treasure,k,s);
+  image(treasure,treasurex,treasurey);
   if(GameState == false){
     image(start,0,0);
     enemyx = 0;
@@ -192,7 +193,7 @@ void draw() {
   }
   image(flame[flame_time],flameX,flameY,60,60);
   timer++;
-  if(timer>6){
+  if(timer>10){
     flame_time++;
     timer = 0;
   }
@@ -255,9 +256,9 @@ void draw() {
   }
 
  
-  if(k-fighterx<=41&&k-fighterx>=-41&&s-fightery<=41&&s-fightery>=-41){
-    k = random(0,599);
-    s = random(0,439);  
+  if(treasurex-fighterx<=41&&treasurex-fighterx>=-41&&treasurey-fightery<=41&&treasurey-fightery>=-41){
+    treasurex = random(0,599);
+    treasurey = random(0,439);  
     l = l+19;
   }
   if(l > 190){
