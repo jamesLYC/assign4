@@ -45,7 +45,6 @@ PImage end2;
 PImage [] flame;
 void setup () {
    size(640, 480) ;
-   frameRate(100);
    bg2 = loadImage("img/bg2.png");
    bg1 = loadImage("img/bg1.png");
    enemy = loadImage("img/enemy.png");
@@ -193,7 +192,7 @@ void draw() {
   }
   image(flame[flame_time],flameX,flameY,60,60);
   timer++;
-  if(timer>10){
+  if(timer>6){
     flame_time++;
     timer = 0;
   }
