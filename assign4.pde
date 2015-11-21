@@ -306,6 +306,9 @@
           }
         }
       }
+      if (GameState == false){
+        bulletPressed = false;
+      } 
       countBulletFrame++;
       
 
