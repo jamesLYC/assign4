@@ -327,6 +327,10 @@
       l = 38;
       m = 0;
       n = -640;
+      for(int i = 0 ; i < 5 ; i++){
+      bulletPositionY[i] = 10000;
+      }
+      flamex = 10000;
     }
     if (GameOver == true && mouseX > 200 && mouseX < 440 && mouseY > 300 && mouseY < 360) {
       image(end2, 0, 0);
